@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${product.name}">Product</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="card">
+        <img th:src="@{${product.image}}" th:alt="${product.name}">
+        <h1 th:text="${product.name}">Name</h1>
+        <p th:text="${product.details}">Details</p>
+        <p class="price" th:text="${product.price}">0</p>
+        <span th:if="${product.price > 100}">Premium</span>
+    </div>
+    <a th:href="@{/products}">Back to products</a>
+</body>
+</html>
